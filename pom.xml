@@ -10,6 +10,7 @@
     <modules>
         <module>fuyao-registry</module>
         <module>fuyao-gateway</module>
+        <module>fuyao-user</module>
     </modules>
     <packaging>pom</packaging>
 

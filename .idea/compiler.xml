@@ -7,7 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="fuyao-registry" />
+        <module name="fuyao-user-service" />
         <module name="fuyao-gateway" />
+        <module name="fuyao-user-interface" />
       </profile>
     </annotationProcessing>
   </component>
@@ -15,6 +17,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="fuyao-gateway" options="-parameters" />
       <module name="fuyao-registry" options="-parameters" />
+      <module name="fuyao-user" options="-parameters" />
+      <module name="fuyao-user-interface" options="-parameters" />
+      <module name="fuyao-user-service" options="-parameters" />
     </option>
   </component>
 </project>
