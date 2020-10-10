@@ -11,6 +11,7 @@
         <module>fuyao-registry</module>
         <module>fuyao-gateway</module>
         <module>fuyao-user</module>
+        <module>fuyao-auth</module>
     </modules>
     <packaging>pom</packaging>
 
