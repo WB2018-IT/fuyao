@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/fuyao-auth/fuyao-auth-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/fuyao-auth/fuyao-auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fuyao-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/fuyao-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/fuyao-registry/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/fuyao-user/fuyao-user-interface/src/main/java" charset="UTF-8" />

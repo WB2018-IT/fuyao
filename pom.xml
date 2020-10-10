@@ -12,6 +12,7 @@
         <module>fuyao-gateway</module>
         <module>fuyao-user</module>
         <module>fuyao-auth</module>
+        <module>fuyao-common</module>
     </modules>
     <packaging>pom</packaging>
 

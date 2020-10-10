@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="fuyao-gateway" />
+        <module name="fuyao-auth-common" />
         <module name="fuyao-registry" />
         <module name="fuyao-auth-service" />
         <module name="fuyao-user-service" />
-        <module name="fuyao-gateway" />
+        <module name="fuyao-common" />
         <module name="fuyao-user-interface" />
-        <module name="fuyao-auth-common" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +21,7 @@
       <module name="fuyao-auth" options="-parameters" />
       <module name="fuyao-auth-common" options="-parameters" />
       <module name="fuyao-auth-service" options="-parameters" />
+      <module name="fuyao-common" options="-parameters" />
       <module name="fuyao-gateway" options="-parameters" />
       <module name="fuyao-registry" options="-parameters" />
       <module name="fuyao-user" options="-parameters" />

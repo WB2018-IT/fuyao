@@ -1,7 +1,7 @@
 package com.fuyao.auth.utils;
 
-import com.fuayo.auth.entity.JwtConstans;
-import com.fuayo.auth.entity.UserInfo;
+import com.fuyao.auth.entity.JwtConstans;
+import com.fuyao.auth.entity.UserInfo;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
