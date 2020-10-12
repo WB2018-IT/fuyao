@@ -8,8 +8,10 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
-#  redis:
-#    host: 119.45.186.76
+  redis:
+    host: 119.45.186.76
+    password: '@#Pass567'
+    timeout: 5000 #连接超时时间（毫秒）
 #  rabbitmq:
 #    host: 119.45.186.76
 #    username: fuyao
