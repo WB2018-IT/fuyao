@@ -2,6 +2,7 @@ package com.fuyao.user.controller;
 
 import com.fuyao.user.pojo.User;
 import com.fuyao.user.service.UserService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +40,7 @@ public class UserController {
     public ResponseEntity<User> queryUserByNameAndPwd(@RequestParam("username") String username,@RequestParam("password") String password){
         User user = userService.queryUserByNameAndPwd(username,password);
         if(user == null){
-            ResponseEntity.notFound().build();
+            return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(user);
     }
@@ -58,6 +59,25 @@ public class UserController {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    /**
+     * 根据手机验证码修改密码
+     * @param username
+     * @param password
+     * @param code
+     * @return
+     */
+    @PutMapping("edit")
+    public ResponseEntity<Void> editPasswdByCode(@RequestParam("username") String username,@RequestParam("password") String password,@RequestParam("phone") String phone,@RequestParam("code") String code){
+        if(StringUtils.isEmpty(username) || StringUtils.isEmpty(password) || StringUtils.isEmpty(code)){
+            return ResponseEntity.badRequest().build();
+        }
+        Boolean boo = userService.editPasswdByCode(username,password,phone,code);
+        if(boo == null || !boo){
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok().build();
     }
 
 }

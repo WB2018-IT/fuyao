@@ -4,6 +4,7 @@ import com.fuyao.common.model.RedisConstants;
 import com.fuyao.common.utils.CodecUtils;
 import com.fuyao.user.mapper.UserMapper;
 import com.fuyao.user.pojo.User;
+import org.apache.commons.lang3.StringUtils;
 import org.omg.IOP.Codec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,8 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Service
@@ -107,6 +110,39 @@ public class UserService {
             //注册成功，删除redis中的记录
             redisTemplate.delete(RedisConstants.REDIS_SMS_CODE + user.getPhone());
         }
+        return boo;
+    }
+
+    /**
+     * 根据手机验证码修改密码
+     * @param username
+     * @param password
+     * @param code
+     * @return
+     */
+    @Transactional
+    public Boolean editPasswdByCode(String username, String password, String phone, String code) {
+        //读取redis中对应的验证码
+        String redisSmsCode = redisTemplate.opsForValue().get(RedisConstants.REDIS_SMS_CODE + phone);
+        if(StringUtils.isEmpty(redisSmsCode)){
+            return false;
+        }
+        if(!redisSmsCode.equals(code)){
+            logger.error("s%","验证码错误");
+            return false;
+        }
+
+        Example example = new Example(User.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("username",username);
+        List<User> users = userMapper.selectByExample(example);
+        if(users == null || users.size() == 0){
+            return false;
+        }
+        User user = users.get(0);
+        System.out.println(user);
+        user.setPassword(CodecUtils.md5Hex(password,user.getSalt()));
+        Boolean boo = userMapper.updateByPrimaryKeySelective(user) == 1;
         return boo;
     }
 }
