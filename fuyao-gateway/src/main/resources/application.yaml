@@ -12,3 +12,13 @@ zuul:
   prefix: /api # 路由路径前缀
   routes:
     user-service: /user/** #用户微服务
+    auth-service: /auth/**  # 授权中心微服务
+fuyao:
+  jwt:
+    pubKeyPath: F:\\tmp\\rsa\\rsa.pub
+    cookieName: FY_TOKEN
+  filter:
+    allowPaths:
+      - /api/auth
+      - /api/user/register
+      - /api/user/check
