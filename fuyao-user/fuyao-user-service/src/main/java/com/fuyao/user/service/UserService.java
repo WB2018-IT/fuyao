@@ -5,7 +5,6 @@ import com.fuyao.common.utils.CodecUtils;
 import com.fuyao.user.mapper.UserMapper;
 import com.fuyao.user.pojo.User;
 import org.apache.commons.lang3.StringUtils;
-import org.omg.IOP.Codec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
