@@ -18,7 +18,7 @@ fuyao:
     pubKeyPath: F:\\tmp\\rsa\\rsa.pub
     cookieName: FY_TOKEN
   filter:
-    allowPaths:
+    allowPaths:   #允许的路径
       - /api/auth
       - /api/user/register
       - /api/user/check

@@ -11,7 +11,7 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 10
-leyou:
+fuyao:
   jwt:
     secret: fuyao@Login(Auth}*^31)&wangb% #登录校验的密钥(盐)
     pubKeyPath: F:\\tmp\\rsa\\rsa.pub #公钥地址
